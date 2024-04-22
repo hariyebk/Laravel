@@ -2,5 +2,5 @@
     <x-slot:heading>
         Home Page
     </x-slot:heading>
-    <h3 class="text-xl text-black font-palanquitin"> This is the Home page </h3>
+    <h1> Welcome to our landing Page </h1>
 </x-layout>

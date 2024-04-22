@@ -9,9 +9,9 @@
 <body>
     <nav class="bg-gray-600 py-5 px-20 mb-10 flex items-center justify-between text-base text-white">
         <div class="space-x-5">
-            <x-navlink href="/" active="{{ request()->is('/') }}"> Home </x-navlink> &nbsp;
-            <x-navlink href="about"  active="{{ request()->is('about') }}"> About </x-navlink> &nbsp;
-            <x-navlink href="contact"  active="{{ request()->is('contact') }}"> Contact </x-navlink>
+            <x-navlink href="/" :active="request()-> is('/')"> Home </x-navlink> &nbsp;
+            <x-navlink href='/jobs' :active="request()-> is('jobs')"> Jobs </x-navlink> &nbsp;
+            <x-navlink href='/contact'  :active="request()-> is('contact')"> Contact </x-navlink>
         </div>
         <div class="flex items-center space-x-10">
             <p> Notifications </p>

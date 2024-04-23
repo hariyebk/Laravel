@@ -10,12 +10,12 @@ Route::get('/', function () {
 
 Route::get("/jobs", function(){
     return view("jobs", [
-        "jobs" => Jobs::GetAllJobs()
+        "jobs" => Jobs::all()
     ]);
 });
 
 Route::get('/job/{id}', function($id){
-    $job = Jobs::FindAjob($id);
+    $job = Jobs::find($id);
     // passing the specific job for the view
     return view('job', ["job" => $job]);
     

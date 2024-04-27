@@ -2,10 +2,16 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Jobs extends Model {
-    // Our class name should be the same as our table but needs to be singular. we can also make it refer to our database by using this 
+
+    /**
+      * If we want to use factory on this model, we need to import the HasFactory trait from the Factories class
+      */
+    use HasFactory;
+    // we are telling elequent that the name of our table is job_listing
     protected $table = 'job_listings';
     
     // allowing which fields can be mass assigned

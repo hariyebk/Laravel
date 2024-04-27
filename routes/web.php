@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Jobs;
+use App\Models\admin;
 
 
 Route::get('/', function () {

@@ -24,7 +24,8 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name(),
+            'firstName' => fake()->firstName(),
+            'lastName' => fake()->lastName(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
@@ -34,6 +35,7 @@ class UserFactory extends Factory
 
     /**
      * Indicate that the model's email address should be unverified.
+     * User::factory()->unverified()->create()
      */
     public function unverified(): static
     {

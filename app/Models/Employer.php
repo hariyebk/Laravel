@@ -10,4 +10,9 @@ class Employer extends Model
     use HasFactory;
 
     protected $fillable = ['name'];
+
+    // establishing a one-to-many relationship with the Job model
+    public function jobs(){
+        return $this->hasMany(Job::class);
+    }
 }

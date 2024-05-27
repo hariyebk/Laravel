@@ -1,22 +1,23 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\Jobs;
-use App\Models\admin;
-
+use App\Models\Job;
 
 Route::get('/', function () {
-    return view('home');
+    return view('home', [
+        "greating" => "holla",
+        "name" => "laravel"
+    ]);
 });
 
 Route::get("/jobs", function(){
     return view("jobs", [
-        "jobs" => Jobs::all()
+        "jobs" => Job::all()
     ]);
 });
 
 Route::get('/job/{id}', function($id){
-    $job = Jobs::find($id);
+    $job = Job::find($id);
     // passing the specific job for the view
     return view('job', ["job" => $job]);
     

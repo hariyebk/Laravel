@@ -2,5 +2,5 @@
     <x-slot:heading>
         Home Page
     </x-slot:heading>
-    <h1> Welcome to our landing Page </h1>
+    <h1> {{ $greating }} Welcome to our landing Page. This is {{ $name }} </h1>
 </x-layout>

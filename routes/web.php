@@ -12,7 +12,8 @@ Route::get('/', function () {
 
 Route::get("/jobs", function(){
     return view("jobs", [
-        "jobs" => Job::all()
+        // Eager loading (fetching all the associated employer data along with each job post instaed quering the database one by one for each jo post in the loop (N+1))
+        "jobs" => Job::with("employer")->get()
     ]);
 });
 

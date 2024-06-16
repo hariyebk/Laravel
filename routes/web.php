@@ -13,7 +13,7 @@ Route::get('/', function () {
 Route::get("/jobs", function(){
     return view("jobs", [
         // Eager loading (fetching all the associated employer data along with each job post instaed quering the database one by one for each jo post in the loop (N+1))
-        "jobs" => Job::with("employer")->get()
+        "jobs" => Job::with("employer")->simplePaginate(5) // using simple paginate instead of the default one like(1, 2, 3)
     ]);
 });
 
